@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>볼차자 리그</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section.content-section').forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function showScheduleSeason(id) {
+      document.querySelectorAll('.season-schedule').forEach(sec => sec.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    function showResultsSeason(id) {
+      document.querySelectorAll('.season-results').forEach(sec => sec.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      showSection('intro'); // 기본 소개 보여주기
+    });
+  </script>
+</head>
+<body class="bg-white text-gray-800">
+  <header class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <img src="bolchaja-logo.png" alt="볼차자 로고" class="h-10">
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="#" onclick="showSection('intro')" class="hover:underline">소개</a></li>
+          <li><a href="#" onclick="showSection('schedule')" class="hover:underline">경기 일정</a></li>
+          <li><a href="#" onclick="showSection('results')" class="hover:underline">경기 결과</a></li>
+          <li><a href="#" onclick="showSection('teams')" class="hover:underline">팀 소개</a></li>
+          <li><a href="#" onclick="showSection('winners')" class="hover:underline">우승팀</a></li>
+          <li><a href="#" onclick="showSection('contact')" class="hover:underline">문의</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 소개 -->
+  <section id="intro" class="p-8 bg-gray-100 content-section">
+    <div class="container mx-auto">
+      <h1 class="text-3xl font-bold mb-4">볼차자 리그란?</h1>
+      <p>10대 축구 동호인을 위한 팀 기반 동네 축구 리그입니다. 팀 vs 팀으로 경쟁하며 포인트와 랭킹이 부여되는 실전형 리그이며,
+        참가비를 통해 장소 및 운영비를 충당합니다. 부산 지역에서 먼저 시작하며, 건전한 스포츠 문화와 성장 기회를 제공합니다.</p>
+    </div>
+  </section>
+
+  <!-- 경기 일정 -->
+  <section id="schedule" class="p-8 content-section hidden">
+    <div class="container mx-auto">
+      <h2 class="text-2xl font-bold mb-4">📅 2025년 경기 일정</h2>
+      <div class="flex space-x-2 mb-4">
+        <button onclick="showScheduleSeason('s01')" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">25.01/02 시즌</button>
+        <button onclick="showScheduleSeason('s02')" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">25.03/04 시즌</button>
+        <button onclick="showScheduleSeason('s03')" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">25.05/06 시즌</button>
+        <button onclick="showScheduleSeason('s04')" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">25.07/08 시즌</button>
+        <button onclick="showScheduleSeason('s05')" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">25.09/10 시즌</button>
+        <button onclick="showScheduleSeason('s06')" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">25.11/12 시즌</button>
+      </div>
+      <div id="s01" class="season-schedule">
+        <div class="p-4 border rounded bg-gray-100 shadow-sm">
+          <strong>2025-01-13 14:00</strong><br>
+          볼차자FC vs 스트롱보이즈<br>
+          📍 부산 시민운동장
+        </div>
+      </div>
+      <div id="s02" class="season-schedule hidden"><p>25.03/04 시즌 경기 예정</p></div>
+      <div id="s03" class="season-schedule hidden"><p>25.05/06 시즌 경기 예정</p></div>
+      <div id="s04" class="season-schedule hidden"><p>25.07/08 시즌 경기 예정</p></div>
+      <div id="s05" class="season-schedule hidden"><p>25.09/10 시즌 경기 예정</p></div>
+      <div id="s06" class="season-schedule hidden"><p>25.11/12 시즌 경기 예정</p></div>
+    </div>
+  </section>
+
+  <!-- 경기 결과 -->
+  <section id="results" class="p-8 bg-gray-100 content-section hidden">
+    <div class="container mx-auto">
+      <h2 class="text-2xl font-bold mb-4">📊 경기 결과</h2>
+      <div class="flex space-x-2 mb-4">
+        <button onclick="showResultsSeason('r01')" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">25.01/02 시즌</button>
+        <button onclick="showResultsSeason('r02')" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">25.03/04 시즌</button>
+        <button onclick="showResultsSeason('r03')" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">25.05/06 시즌</button>
+        <button onclick="showResultsSeason('r04')" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">25.07/08 시즌</button>
+        <button onclick="showResultsSeason('r05')" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">25.09/10 시즌</button>
+        <button onclick="showResultsSeason('r06')" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">25.11/12 시즌</button>
+      </div>
+      <div id="r01" class="season-results">
+        <div class="p-4 border rounded bg-white shadow-sm">
+          <strong>2025-01-13</strong><br>
+          볼차자FC 3 - 2 스트롱보이즈<br>
+          📍 부산 시민운동장
+        </div>
+      </div>
+      <div id="r02" class="season-results hidden"><p>25.03/04 시즌 결과 예정</p></div>
+      <div id="r03" class="season-results hidden"><p>25.05/06 시즌 결과 예정</p></div>
+      <div id="r04" class="season-results hidden"><p>25.07/08 시즌 결과 예정</p></div>
+      <div id="r05" class="season-results hidden"><p>25.09/10 시즌 결과 예정</p></div>
+      <div id="r06" class="season-results hidden"><p>25.11/12 시즌 결과 예정</p></div>
+    </div>
+  </section>
+
+  <!-- 팀 소개 -->
+  <section id="teams" class="p-8 content-section hidden">
+    <div class="container mx-auto">
+      <h2 class="text-2xl font-bold mb-4">👥 참가 팀 소개</h2>
+      <p>참가 중인 팀들의 간단한 프로필 및 팀원 구성 예정.</p>
+    </div>
+  </section>
+
+  <!-- 우승팀 -->
+  <section id="winners" class="p-8 bg-gray-100 content-section hidden">
+    <div class="container mx-auto">
+      <h2 class="text-2xl font-bold mb-4">🏆 우승팀 명예의 전당</h2>
+      <p>25.01/02 시즌 우승팀: <strong>볼차자FC</strong></p>
+    </div>
+  </section>
+
+  <!-- 문의 -->
+  <section id="contact" class="p-8 content-section hidden">
+    <div class="container mx-auto">
+      <h2 class="text-2xl font-bold mb-4">📞 문의하기</h2>
+      <ul class="space-y-2">
+        <li>📱 인스타그램 DM: <a href="https://instagram.com/bolchaja" class="text-blue-500 underline">@bolchaja</a></li>
+        <li>📩 이메일: bolchaja@gmail.com</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="bg-gray-200 text-center p-4 text-sm mt-12">
+    © 2025 볼차자 리그. All rights reserved.
+  </footer>
+</body>
+</html>
